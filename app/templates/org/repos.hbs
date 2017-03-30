@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Repo</th>
+      {{!--<th>Commits</th>--}}
+      <th>Stars</th>
+      <th>Forks</th>
+      {{!--<th>Contributors</th>--}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |repo index|}}
+      <tr>
+        {{#link-to 'org.repo'}}
+          <th>{{index}}</th>
+
+          <td>{{repo.name}}</td>
+          <td>{{repo.stargazers_count}}</td>
+          <td>{{repo.forks_count}}</td>
+        {{/link-to}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
