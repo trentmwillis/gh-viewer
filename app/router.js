@@ -9,11 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('org', { path: '/organization/:orgName' }, function() {
     this.route('repos');
-    this.route('repo');
-  });
-
-  this.route('repo', { path: '/repo/:repoName' }, function() {
-    this.route('commit', { path: '/commit/:sha' });
+    this.route('repo', { path: '/repo/:repoName' }, function() {
+      this.route('commit', { path: '/commit/:sha' });
+    });
   });
 });
 

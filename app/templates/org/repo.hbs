@@ -1,1 +1,43 @@
-{{outlet}}
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{model.org.name}} | {{model.repo.name}}
+      </h1>
+
+      <h2 class="subtitle">
+       {{#if model.org.description}}
+         {{model.org.description}} |
+        {{/if}}
+        {{model.org.html_url}}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Commit</th>
+      <th>Date</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.commits as |commit|}}
+      <tr>
+        <td>
+          <a href="https://github.com/{{model.org.login}}/{{model.repo.name}}/commit/{{commit.sha}}" target="_blank" rel="noopener noreferrer">
+            {{commit.sha}}
+          </a>
+        </td>
+        <td>{{commit.commit.author.date}}</td>
+        <td>
+          <a href="https://github.com/{{commit.author.login}}" target="_blank" rel="noopener noreferrer">
+            {{commit.author.login}}
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

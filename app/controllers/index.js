@@ -11,7 +11,7 @@ export default Controller.extend({
 
       let githubOrgInput = event.target.querySelector('#github-org');
       let orgName = githubOrgInput.value.toLowerCase();
-      this.transitionToRoute('org', { orgName });
+      this.transitionToRoute('org', orgName);
     }
   }
 });

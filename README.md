@@ -1,52 +1,26 @@
-# gh-viewer
+# GitHub Viewer
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A simple [Progressive Web Application](https://developers.google.com/web/progressive-web-apps/) that allows you to view the repositories for GitHub organizations and explore the commit history of those repositories.
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Bower](https://bower.io/)
+* [Node.js](https://nodejs.org/) (with [Yarn](https://yarnpkg.com/en/))
 * [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd gh-viewer`
-* `npm install`
-* `bower install`
+* `yarn install`
 
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
+* Visit the application at [http://localhost:4200](http://localhost:4200).
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* `ember exam`

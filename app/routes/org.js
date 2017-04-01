@@ -6,7 +6,9 @@ export default Ember.Route.extend({
     return fetchFromGithub(`orgs/${params.orgName}`);
   },
 
-  redirect() {
-    this.replaceWith('org.repos');
+  redirect(model, transition) {
+    if (transition.targetName === 'org.index') {
+      this.replaceWith('org.repos');
+    }
   }
 });

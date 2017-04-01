@@ -1,3 +1,5 @@
+import fetch from 'ember-network/fetch';
+
 const DEFAULT_OPTIONS = {
   Accept: 'application/vnd.github.v3+json'
 };
