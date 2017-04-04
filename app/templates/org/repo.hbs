@@ -9,7 +9,9 @@
        {{#if model.org.description}}
          {{model.org.description}} |
         {{/if}}
-        {{model.org.html_url}}
+        <a class="repo-link" href="{{model.repo.html_url}}" rel="noreferrer noopener" target="_blank">
+          {{model.repo.html_url}}
+        </a>
       </h2>
     </div>
   </div>
@@ -19,24 +21,28 @@
   <thead>
     <tr>
       <th>Commit</th>
-      <th>Date</th>
+      <th>Message</th>
       <th>Author</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     {{#each model.commits as |commit|}}
-      <tr>
+      <tr class="commit-row">
         <td>
           <a href="https://github.com/{{model.org.login}}/{{model.repo.name}}/commit/{{commit.sha}}" target="_blank" rel="noopener noreferrer">
             {{commit.sha}}
           </a>
         </td>
-        <td>{{commit.commit.author.date}}</td>
+        <td>
+          {{commit.commit.message}}
+        </td>
         <td>
           <a href="https://github.com/{{commit.author.login}}" target="_blank" rel="noopener noreferrer">
             {{commit.author.login}}
           </a>
         </td>
+        <td>{{commit.commit.author.date}}</td>
       </tr>
     {{/each}}
   </tbody>

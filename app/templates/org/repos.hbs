@@ -9,7 +9,9 @@
        {{#if model.org.description}}
          {{model.org.description}} |
         {{/if}}
-        {{model.org.html_url}}
+        <a class="org-link" href="{{model.org.html_url}}" rel="noreferrer noopener" target="_blank">
+          {{model.org.html_url}}
+        </a>
       </h2>
     </div>
   </div>
@@ -19,16 +21,38 @@
   <thead>
     <tr>
       <th>Repo</th>
-      <th>Stars</th>
-      <th>Forks</th>
+      <th>
+        <a href="#" onclick={{action 'toggleSort' 'stargazers_count'}} class="toggle-stars">
+          Stars
+          {{#if (eq sortBy 'stargazers_count')}}
+            {{#if sortAscending}}
+              &#9650;
+            {{else}}
+              &#9660;
+            {{/if}}
+          {{/if}}
+        </a>
+      </th>
+      <th>
+        <a href="#" onclick={{action 'toggleSort' 'forks_count'}} class="toggle-forks">
+          Forks
+          {{#if (eq sortBy 'forks_count')}}
+            {{#if sortAscending}}
+              &#9650;
+            {{else}}
+              &#9660;
+            {{/if}}
+          {{/if}}
+        </a>
+      </th>
     </tr>
   </thead>
   <tbody>
-    {{#each model.repos as |repo|}}
-      <tr>
-        <td>
-          {{#link-to 'org.repo' repo.name}}
-            {{repo.name}}
+    {{#each sortedRepos as |repo|}}
+      <tr class="repo-row">
+        <td class="repo-name">
+          {{#link-to 'org.repo' repo.name class="repo-link"}}
+            {{~repo.name~}}
           {{/link-to}}
         </td>
         <td>{{repo.stargazers_count}}</td>
