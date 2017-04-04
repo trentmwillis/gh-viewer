@@ -6,5 +6,11 @@ const DEFAULT_OPTIONS = {
 
 export default function fetchFromGithub(path) {
   let request = fetch(`https://api.github.com/${path}`, DEFAULT_OPTIONS);
-  return request.then(result => result.json());
+  return request.then(result => {
+    if (result.ok) {
+      return result.json();
+    } else {
+      throw result;
+    }
+  });
 }

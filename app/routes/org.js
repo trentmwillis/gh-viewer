@@ -10,5 +10,12 @@ export default Ember.Route.extend({
     if (transition.targetName === 'org.index') {
       this.replaceWith('org.repos');
     }
+  },
+
+  actions: {
+    error() {
+      let params = this.paramsFor('org');
+      this.replaceWith('index', { queryParams: { error: `Could not find organization ${params.orgName}` } });
+    }
   }
 });

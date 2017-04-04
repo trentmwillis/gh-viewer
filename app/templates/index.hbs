@@ -1,10 +1,12 @@
 <section class="hero is-fullheight is-light">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <form id="github-org-search" onsubmit={{action 'orgSubmitted'}}>
-        <label class="label" for="github-org">GitHub Organization Name</label>
-        <input id="github-org" class="input" type="text" placeholder="GitHub Organization">
-      </form>
+      <div class="columns">
+        <form id="github-org-search" onsubmit={{action 'orgSubmitted'}} class="column is-half is-offset-one-quarter">
+          <label class="label" for="github-org">GitHub Organization Name</label>
+          <input id="github-org" class="input is-medium" type="text" placeholder="GitHub Organization">
+        </form>
+      </div>
     </div>
   </div>
 </section>

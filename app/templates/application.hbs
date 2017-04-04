@@ -1,11 +1,25 @@
-<nav class="nav">
-  <div class="container">
-    <div class="nav-left">
-      {{#link-to 'index' class="nav-item"}}
-        GitHub Viewer
-      {{/link-to}}
+{{#if error}}
+  <section id="error-modal" class="hero is-fullheight is-dark">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p>{{error}}</p>
+        <br>
+        <button onclick={{action 'clearError'}} class="button dismiss">Got it</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </section>
+{{/if}}
 
-{{outlet}}
+<div class="main {{if error 'blur'}}">
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-left">
+        {{#link-to 'index' class="nav-item"}}
+          GitHub Viewer
+        {{/link-to}}
+      </div>
+    </div>
+  </nav>
+
+  {{outlet}}
+</div>
