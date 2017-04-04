@@ -5,6 +5,12 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     trees: {
       vendor: 'node_modules/bulma'
+    },
+
+    'esw-cache-fallback': {
+      patterns: [
+        'api.github.com/(.+)'
+      ],
     }
   });
 
