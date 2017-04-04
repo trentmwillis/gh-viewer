@@ -10,12 +10,12 @@ export default Controller.extend({
   sortAscending: true,
   sortedRepos: computed('model.repos', 'sortBy', 'sortAscending', function() {
     let sortBy = this.get('sortBy');
-    let sortAscending = this.get('sortAscending')
+    let sortAscending = this.get('sortAscending');
     return this.get('model.repos').sort((a, b) => {
       if (sortAscending) {
-        return a[sortBy] < b[sortBy];
+        return a[sortBy] < b[sortBy] ? 1 : -1;
       } else {
-        return a[sortBy] > b[sortBy];
+        return a[sortBy] > b[sortBy] ? 1 : -1;
       }
     });
   }).readOnly(),

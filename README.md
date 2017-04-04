@@ -1,5 +1,7 @@
 # GitHub Viewer
 
+[![Build Status](https://travis-ci.org/trentmwillis/gh-viewer.svg?branch=master)](https://travis-ci.org/trentmwillis/gh-viewer)
+
 A simple [Progressive Web Application](https://developers.google.com/web/progressive-web-apps/) that allows you to view the repositories for GitHub organizations and explore the commit history of those repositories.
 
 ## Prerequisites
@@ -24,3 +26,7 @@ You will need the following things properly installed on your computer.
 ### Running Tests
 
 * `ember exam`
+
+### Deployments
+
+Deployments automatically happen once changes have been merged into master. So, make sure you test your changes!
