@@ -9,7 +9,7 @@ module.exports = function(defaults) {
 
     'esw-cache-fallback': {
       patterns: [
-        'api.github.com/(.+)'
+        'https://api.github.com/(.+)'
       ],
     }
   });
