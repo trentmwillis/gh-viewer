@@ -1,4 +1,21 @@
 export default function () {
+  this.get('https://api.github.com/orgs/:org', function() {
+    return {
+      "message": "Not Found",
+      "documentation_url": "https://developer.github.com/v3"
+    };
+  }, 404);
+
+  this.get('https://api.github.com/repos/:org/:repo', {
+    "message": "Not Found",
+    "documentation_url": "https://developer.github.com/v3"
+  }, 404);
+
+  this.get('https://api.github.com/repos/:org/:repo/commits', {
+    "message": "Not Found",
+    "documentation_url": "https://developer.github.com/v3"
+  }, 404);
+
   this.get('https://api.github.com/orgs/emberjs', function() {
     return {
       "login": "emberjs",
@@ -27,13 +44,6 @@ export default function () {
       "type": "Organization"
     };
   });
-
-  this.get('https://api.github.com/orgs/does-not-exist', function() {
-    return {
-      "message": "Not Found",
-      "documentation_url": "https://developer.github.com/v3"
-    };
-  }, 404);
 
   this.get('https://api.github.com/orgs/emberjs/repos', function() {
     return [

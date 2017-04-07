@@ -1,14 +1,19 @@
 import Ember from 'ember';
 
 const {
-  Controller
+  Controller,
+  computed,
+  inject: {
+    service
+  }
 } = Ember;
 
 export default Controller.extend({
-  queryParams: [ 'error' ],
+  messageManager: service('message-manager'),
+  error: computed.readOnly('messageManager.message'),
   actions: {
     clearError() {
-      this.set('error', undefined);
+      this.get('messageManager').clearMessage();
     }
   }
 });
