@@ -4,6 +4,12 @@
 
 A simple [Progressive Web Application](https://developers.google.com/web/progressive-web-apps/) that allows you to view the repositories for GitHub organizations and explore the commit history of those repositories.
 
+[![Lighthouse Score](./lighthouse-score.png)](https://developers.google.com/web/tools/lighthouse/)
+
+## Architecture / Considerations
+
+This app was intended to be developed quickly and thus Ember.js and its eco-system are leveraged heavily. The opinionated nature and shared tooling of Ember-CLI allowed many features to be added quickly.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -14,7 +20,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/trentmwillis/gh-viewer.git` this repository
 * `cd gh-viewer`
 * `yarn install`
 
@@ -25,7 +31,7 @@ You will need the following things properly installed on your computer.
 
 ### Running Tests
 
-* `ember exam`
+* `ember test`
 
 ### Deployments
 
